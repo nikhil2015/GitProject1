@@ -1,7 +1,6 @@
-public class add(){
+public class sub(){
 	int x,y;
 	int c;
-	c=x+y;
 	c=x-y;
 
 
