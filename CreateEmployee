@@ -1,0 +1,31 @@
+package com.nikhil.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmployeeDao {
+	
+	@Autowired
+	JdbcTemplate jt;
+		
+	
+	public boolean createEmployee(String name,String desg) {
+		return jt.update("insert into Employee(name,desg) values(?,?)", new PreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub
+				ps.setObject(1, name);
+				ps.setObject(2, desg);
+				
+			}
+		})>0;
+	}
+
+}
