@@ -2,7 +2,7 @@ public class add(){
 	int x,y;
 	int c;
 	c=x+y;
-	c=x-y;
+	system.out.println("Addition"+c);
 
 
 }
