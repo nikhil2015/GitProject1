@@ -1,0 +1,6 @@
+public class add(){
+	int x,y;
+	int c;
+	c=x+y;
+
+}
